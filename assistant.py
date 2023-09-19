@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from components.assistance import Assistance
 from components.chat import ChatSession
 from components.azuretts import TextToSpeech
+from components.parser import parse
 from components.script import Script, Voices, Styles
 
 # SETUP
@@ -29,9 +30,7 @@ answer = chatSession.chat(question)
 
 # PARSE
 
-assistance = Assistance()
-assistance.addAction(lambda : print(answer), "Print message")
-assistance.addAction(lambda : textToSpeech.speakText(answer), "Reading message")
+assistance = parse(answer, textToSpeech)
 
 # EXECUTE
 
