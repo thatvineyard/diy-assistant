@@ -40,3 +40,9 @@ Now it's up to you to be creative and figure out something else it can do. Some 
 - Have it play chess while taunting you incessantly
 - Have it create animations in real time using some sort of graphics library
 - Have it turn off Elden Ring every time you die unless you manage to convince it that you're actually getting better
+
+## Further reading
+
+- https://medium.com/coinmonks/top-20-chatgpt-prompts-that-every-prompt-engineers-should-know-937b0ea5472#14a6
+- https://www.promptingguide.ai/introduction/examples
+- https://github.com/mustvlad/ChatGPT-System-Prompts
