@@ -11,3 +11,7 @@ Your job is to create some sort of logic in there that makes use of what the AI 
 By asking it to include directions in a specific syntax (like in square brackets, delimited by a certain character or something like that) we can then read it. For some tips, read this [article](https://medium.com/coinmonks/top-20-chatgpt-prompts-that-every-prompt-engineers-should-know-937b0ea5472#14a6)
 
 There are also examples in `components/chatparsers` that have their corresponding system prompts in `compontnets/system-prompts`. These are the parsers I build when prototyping the workshop. They have some flaws, but so do we all.
+
+## Go to next step
+
+Checkout branch `4-spotify`.
