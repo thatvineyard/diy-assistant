@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 
 from components.assistance import Assistance
 from components.chat import ChatSession
+from components.azuretts import TextToSpeech
+from components.script import Script, Voices, Styles
 
 # SETUP
 
@@ -14,6 +16,7 @@ SPOTIFY_APP_ID=os.environ["SPOTIFY_APP_ID"]
 SPOTIFY_APP_SECRET=os.environ["SPOTIFY_APP_SECRET"]
 
 chatSession = ChatSession(OPENAI_KEY)
+textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
 
 # CHAT
 
@@ -28,6 +31,7 @@ answer = chatSession.chat(question)
 
 assistance = Assistance()
 assistance.addAction(lambda : print(answer), "Print message")
+assistance.addAction(lambda : textToSpeech.speakText(answer), "Reading message")
 
 # EXECUTE
 
