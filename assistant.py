@@ -6,6 +6,8 @@ from components.chat import ChatSession
 from components.azuretts import TextToSpeech
 from components.parser import parse
 from components.script import Script, Voices, Styles
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 # SETUP
 
@@ -18,6 +20,7 @@ SPOTIFY_APP_SECRET=os.environ["SPOTIFY_APP_SECRET"]
 
 chatSession = ChatSession(OPENAI_KEY)
 textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
+spotipy = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIFY_APP_ID, client_secret=SPOTIFY_APP_SECRET))
 
 # CHAT
 
