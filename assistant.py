@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 
 from components.assistance import Assistance
+from components.chat import ChatSession
 
 # SETUP
 
@@ -12,12 +13,21 @@ AZURE_SERVICE_REGION=os.environ["AZURE_SERVICE_REGION"]
 SPOTIFY_APP_ID=os.environ["SPOTIFY_APP_ID"]
 SPOTIFY_APP_SECRET=os.environ["SPOTIFY_APP_SECRET"]
 
+chatSession = ChatSession(OPENAI_KEY)
+
 # CHAT
+
+# Receives a text from console input.
+print("Ask your question")
+question = input()
+
+# ask openAi for an answer
+answer = chatSession.chat(question)
 
 # PARSE
 
 assistance = Assistance()
-assistance.addAction(lambda : print("Hello World"), "Print message")
+assistance.addAction(lambda : print(answer), "Print message")
 
 # EXECUTE
 
