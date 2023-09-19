@@ -26,4 +26,4 @@ We'll talk about what we personally felt made for a good system prompt and share
 
 ## Go to next step
 
-Checkout branch `2-TTS`.
+Checkout branch `2-tts`.
