@@ -1,7 +1,5 @@
 from typing import Callable
-
-CBLUE2   = '\33[94m'
-CEND = '\033[0m'
+from colorama import Fore, Style
 
 class Assistance:
   """
@@ -19,5 +17,5 @@ class Assistance:
   
   def execute(self):
     for action in self.actions:
-      print(f'{CBLUE2}ASSISTANCE: {action[1]}{CEND}')
+      print(f'{Fore.LIGHTBLUE_EX}ASSISTANCE:{Style.RESET_ALL} {action[1]}')
       action[0]()
