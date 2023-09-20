@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from colorama import Fore, Style
 
 from components.assistance import Assistance
 from components.chat import ChatSession
@@ -25,11 +26,14 @@ spotipy = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIF
 # CHAT
 
 # Receives a text from console input.
-print("Ask your question")
-question = input()
+question = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
+
 
 # ask openAi for an answer
 answer = chatSession.chat(question)
+
+# print answer to debug if needed
+# print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
 
 # PARSE
 
