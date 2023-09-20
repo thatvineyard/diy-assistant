@@ -2,7 +2,7 @@
 
 ## 1. Check out the new files
 
-A new file `components/chat.py` has been added which contains the code for communicating with OpenAI which `assitant.py` has integrated with. 
+A new file `components/chat.py` has been added which contains the code for communicating with OpenAI which `assitant.py` has integrated with.
 There are also system prompts placed in `components/system-prompts/`.
 
 Run the application again using `py assistant.py` and try out chatting with it.
@@ -22,7 +22,7 @@ Some tips from my experience:
 
 ## 3. Reflect
 
-We'll talk about what we personally felt made for a good system prompt and share tips. 
+We'll talk about what we personally felt made for a good system prompt and share tips.
 
 ## Go to next step
 
