@@ -1,9 +1,13 @@
 from typing import Callable
-
-CBLUE2   = '\33[94m'
-CEND = '\033[0m'
+from colorama import Fore, Style
 
 class Assistance:
+  """
+  An Assistance is a list of actions that can be executed by the assistant.
+  Fill it by running `addAction(callback, description)`.
+    For example: `assistance.addAction(lambda : print("Hello World"), "Print message")`
+  Then execute all the actions sequentially by running `execute()`.
+  """
   
   def __init__(self):
     self.actions: list[tuple[Callable[[], None]], str] = []
@@ -13,5 +17,5 @@ class Assistance:
   
   def execute(self):
     for action in self.actions:
-      print(f'{CBLUE2}ASSISTANCE: {action[1]}{CEND}')
+      print(f'{Fore.LIGHTBLUE_EX}ASSISTANCE:{Style.RESET_ALL} {action[1]}')
       action[0]()

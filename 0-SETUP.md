@@ -2,6 +2,8 @@
 
 ## 1. Install python dependencies
 
+If you wish to isolate the packages in a separate virutal environment you can use `python -m venv .venv` and then activate it using `./.venv/Scripts/activate`. To leave the environment write `deactivate`
+
 `pip install -r requirements.txt`
 
 ## 2. Set up env
