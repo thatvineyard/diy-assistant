@@ -12,3 +12,4 @@
 - https://medium.com/coinmonks/top-20-chatgpt-prompts-that-every-prompt-engineers-should-know-937b0ea5472#14a6
 - https://www.promptingguide.ai/introduction/examples
 - https://github.com/mustvlad/ChatGPT-System-Prompts
+- https://matt-rickard.com/a-list-of-leaked-system-prompts
