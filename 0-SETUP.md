@@ -2,9 +2,9 @@
 
 ## 1. Install python dependencies
 
-If you wish to isolate the packages in a separate virutal environment you can use `python -m venv .venv` and then activate it using `./.venv/Scripts/activate`. To leave the environment write `deactivate`
+If you wish to isolate the packages in a separate virtual environment you can use `python -m venv .venv` and then activate it using `./.venv/Scripts/activate` or `source .venv/Scripts/activate`. To leave the environment, after the lab, run the command `deactivate`.
 
-`pip install -r requirements.txt`
+Continue by installing all required packages `pip install -r requirements.txt`.
 
 ## 2. Set up env
 
@@ -20,7 +20,7 @@ The structure of this project is based on creating an "Assistance" and loading i
 
 ## 4. Add an action
 
-Add another, simple action to the assitant to test the functionality.
+Add another, simple action to the assistant to test the functionality.
 
 ## Go to next step
 

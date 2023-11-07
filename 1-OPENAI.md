@@ -9,7 +9,7 @@ Run the application again using `py assistant.py` and try out chatting with it.
 
 ## 2. Write a system prompt
 
-System prompts are sent alongside your message to structure and decide the behaviour of the responses you will get. This is where your AI will get its personality and is usually the best way to get it to stop being so clean, friendly and corporate.
+System prompts are sent alongside your message to structure and decide the behavior of the responses you will get. This is where your AI will get its personality and is usually the best way to get it to stop being so clean, friendly and corporate.
 
 There are examples in `components/system-prompts/examples`, but you can also find examples in the [mustvlad/ChatGPT-System-Prompts](https://github.com/mustvlad/ChatGPT-System-Prompts) repo on GitHub.
 
