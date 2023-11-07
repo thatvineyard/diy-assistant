@@ -17,14 +17,11 @@ class ChatSession:
     
     if os.path.exists(f'{history_directory}/{history_file_name}'):
       self.history = ChatHistory.fromFile(history_directory, history_file_name)
-      print(self.history.toHistoryPrompt)
     else:
       self.history = ChatHistory(history_directory, history_file_name)
-      print("starting new history")
 
   def chat(self, question):
       # Provide the model name or ID
-      # model = 'gpt-3.5-turbo'
       model = 'gpt-3.5-turbo-0613'
 
       system_prompt = open('components/system-prompts/system-prompt.txt', "r").read()

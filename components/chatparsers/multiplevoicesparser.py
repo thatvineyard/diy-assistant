@@ -1,3 +1,4 @@
+import json
 import re
 from types import NoneType
 from components.assistance import Assistance
@@ -25,17 +26,14 @@ def mapCharacterToVoice(character: str):
       return Voices.JENNY
 
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
-  lines: re.Match = re.findall(f'^\[({REGEX_STRING_WITH_NO_SQUARE_BRACKET}*)\]({REGEX_STRING_WITH_NO_SQUARE_BRACKET}*)', text, flags=re.MULTILINE)
-  
-  if isinstance(lines, NoneType):
-    print("No match")
-    return 
+  lines = json.loads(text)
   
   script = Script()
-  
+
   for line in lines:
-    character = line[0]
-    text = line[1]
+    character = line['voice']
+    text = line['text']
+    emotion = line['emotion']
     
     script.addLine(text, voice=mapCharacterToVoice(character), styleDegree=2, rate=1.5)
 
