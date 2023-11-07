@@ -1,7 +1,6 @@
 import os
 import openai
 from datetime import datetime
-import json
 
 from components.utils.chathistory import ChatHistory
 

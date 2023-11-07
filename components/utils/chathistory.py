@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 
 class ChatRound:
@@ -20,6 +21,7 @@ class ChatHistory:
         self.history_file_path = f"{history_directory}/{file_name}"
         os.makedirs(os.path.dirname(self.history_file_path), exist_ok=True)
 
+    @staticmethod
     def fromFile(history_directory: str, history_file_name: str):
         history = ChatHistory(history_directory, history_file_name)
         history_file = open(history.history_file_path, "r")
@@ -33,6 +35,7 @@ class ChatHistory:
         return history
 
     def saveChatRound(self, question: str, answer: str):
+        answer = re.sub(r'\s+', ' ', answer)
         chatRound = ChatRound(question, answer)
         self.history.append(chatRound)
         self.storeHistory()
