@@ -18,27 +18,29 @@ AZURE_KEY_1=os.environ["AZURE_KEY_1"]
 AZURE_SERVICE_REGION=os.environ["AZURE_SERVICE_REGION"]
 SPOTIFY_APP_ID=os.environ["SPOTIFY_APP_ID"]
 SPOTIFY_APP_SECRET=os.environ["SPOTIFY_APP_SECRET"]
+HISTORY_DIRECTORY=os.environ["HISTORY_DIRECTORY"]
 
-chatSession = ChatSession(OPENAI_KEY)
+chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY)
 textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
 spotipy = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIFY_APP_ID, client_secret=SPOTIFY_APP_SECRET))
 
 # CHAT
 
-# Receives a text from console input.
-question = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
+while True: 
+  # Receives a text from console input.
+  question = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
 
 
-# ask openAi for an answer
-answer = chatSession.chat(question)
+  # ask openAi for an answer
+  answer = chatSession.chat(question)
 
-# print answer to debug if needed
-# print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
+  # print answer to debug if needed
+  # print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
 
-# PARSE
+  # PARSE
 
-assistance = parse(answer, textToSpeech)
+  assistance = parse(answer, textToSpeech)
 
-# EXECUTE
+  # EXECUTE
 
-assistance.execute()
+  assistance.execute()
