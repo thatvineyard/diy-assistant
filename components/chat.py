@@ -10,7 +10,7 @@ class ChatSession:
       # model = 'gpt-3.5-turbo'
       model = 'gpt-3.5-turbo-0613'
 
-      system_prompt= open('config/system-prompt.txt', "r").read();
+      system_prompt= open('components/system-prompts/system-prompt.txt', "r").read();
 
       # Generate a chat completion
       response = openai.ChatCompletion.create(

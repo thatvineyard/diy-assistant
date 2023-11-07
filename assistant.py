@@ -1,13 +1,16 @@
 import os
 from dotenv import load_dotenv
-from datetime import date, datetime
+from colorama import Fore, Style
+
+from components.assistance import Assistance
+from components.chat import ChatSession
+from components.azuretts import TextToSpeech
+from components.parser import parse
+from components.script import Script, Voices, Styles
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
-
-from components.chat import ChatSession
-from components.voices import azuretts
-from components.chatparsers import multiplevoicesparser, emotionparser, spotifyparser
+# SETUP
 
 load_dotenv(".env")
 OPENAI_KEY=os.environ["OPENAI_KEY"]
@@ -17,18 +20,25 @@ SPOTIFY_APP_ID=os.environ["SPOTIFY_APP_ID"]
 SPOTIFY_APP_SECRET=os.environ["SPOTIFY_APP_SECRET"]
 
 chatSession = ChatSession(OPENAI_KEY)
-textToSpeech = azuretts.TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
+textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
 spotipy = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIFY_APP_ID, client_secret=SPOTIFY_APP_SECRET))
 
+# CHAT
+
 # Receives a text from console input.
-print("Ask your question")
-question = input()
+question = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
+
 
 # ask openAi for an answer
 answer = chatSession.chat(question)
 
-print(answer)
+# print answer to debug if needed
+# print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
 
-assistance = spotifyparser.parse(answer, textToSpeech, spotipy)
+# PARSE
+
+assistance = parse(answer, textToSpeech)
+
+# EXECUTE
 
 assistance.execute()
