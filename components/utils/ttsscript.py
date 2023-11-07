@@ -1,13 +1,47 @@
 
 from components.utils.ssmlformatter import SsmlFormatter
 
+class TtsScript:
+  """
+  A class used to build a text-to-speech script by adding lines with different voices and emotions. 
+  Once the script has had lines added it can be turned to SSML (used by Azure's TTS) by using `toSSML()`.
+  """
+  
+  def __init__(self, defaultVoice: str = "en-US-AriaNeural"):
+      self.lines: list[TtsLine] = []
+      self.defaultVoice = defaultVoice
+  
+  # Use this function to add a line to the script
+  def addLine(self, text: str, voice: str = "", style: str = "", styleDegree: int = 1, rate: int = -1, print_prefix: str = ""):
+    if(voice == ""):
+      voice = self.defaultVoice
+    
+    self.lines.append(TtsLine(text, voice, style, styleDegree, rate, print_prefix))
+    
+  # Converts this script to a SSML format to be used by Azure text-to-speech service.
+  def toSSML(self):      
+    allLines = "\n".join(map(lambda line: line.toSSML(), self.lines))
+    allLines = SsmlFormatter.encaseInSSMLTag(allLines)
+    return allLines
+
+  # Formats the script for printing in the console.
+  def toString(self):
+    result = ""
+    "\n".join(map(lambda line: f'{line.print_prefix}{line.text}', self.lines))
+    return result
+
 class TtsLine:
-  def __init__(self, text: str, voice: str, style: str = "", styleDegree: int = 1, rate: int = -1):
+  """
+  Represents a line to be read in a certain voice and style. 
+  """
+  
+  def __init__(self, text: str, voice: str, style: str = "", styleDegree: int = 1, rate: int = -1, print_prefix: str = ""):
     self.text = text
     self.voice = voice
     self.style = style
     self.styleDegree = styleDegree
     self.rate = rate
+    self.print_prefix = print_prefix
   
   def toSSML(self):
     ssml_text = self.text
@@ -18,26 +52,3 @@ class TtsLine:
     ssml_text = SsmlFormatter.encaseInVoiceTag(ssml_text, self.voice)
         
     return ssml_text
-
-class TtsScript:
-    def __init__(self, defaultVoice: str = "en-US-AriaNeural"):
-        self.lines: list[TtsLine] = []
-        self.defaultVoice = defaultVoice
-    
-    # Use this function to add a line to the script
-    def addLine(self, text: str, voice: str = "", style: str = "", styleDegree: int = 1, rate: int = -1):
-      if(voice == ""):
-        voice = self.defaultVoice
-      
-      self.lines.append(TtsLine(text, voice, style, styleDegree, rate))
-      
-    def toSSML(self):      
-      allLines = "\n".join(map(lambda line: line.toSSML(), self.lines))
-      allLines = SsmlFormatter.encaseInSSMLTag(allLines)
-      return allLines
-
-    def toString(self):
-      result = ""
-      for line in self.lines:
-        result += f'{line.voice}:  {line.text}\n'
-      return result
