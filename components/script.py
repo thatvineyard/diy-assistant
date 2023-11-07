@@ -1,7 +1,6 @@
 
 from components.utils.ssmlformatter import SsmlFormatter
 
-
 class Voices:
   ARIA = "en-US-AriaNeural"
   GUY = "en-US-GuyNeural"
@@ -11,6 +10,7 @@ class Voices:
   NANCY = "en-US-NancyNeural"
   JANE = "en-US-JaneNeural"
   JENNY = "en-US-JennyNeural"
+  ROBOT = "en-US-AIGenerate1Neural"
 
 class Styles: 
     angry = "angry" # 	Expresses an angry and annoyed tone.
@@ -41,7 +41,7 @@ class Line:
     if(self.rate != -1):
         ssml_text = SsmlFormatter.encaseInRateTag(ssml_text, self.rate)
     ssml_text = SsmlFormatter.encaseInVoiceTag(ssml_text, self.voice)
-    
+        
     return ssml_text
 
 class Script:
@@ -51,6 +51,9 @@ class Script:
     
     # Use this function to add a line to the script
     def addLine(self, text: str, voice: str = "", style: str = "", styleDegree: int = 1, rate: int = -1):
+      if(voice == ""):
+        voice = self.defaultVoice
+      
       self.lines.append(Line(text, voice, style, styleDegree, rate))
       
     def getSSML(self):      
@@ -61,4 +64,5 @@ class Script:
     def toString(self):
       result = ""
       for line in self.lines:
-        result += f'line.voice:  line.text'
+        result += f'{line.voice}:  {line.text}\n'
+      return result
