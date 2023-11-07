@@ -1,14 +1,13 @@
 from components.assistance import Assistance
-from components.azuretts import TextToSpeech
-from components.script import Script
-
+from components.texttospeech import TextToSpeech
+from components.utils.ttsscript import TtsScript
 
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
   # Do some sort of string matching, such as a regex.
   # Act on what you find. Maybe something can be mapped to a certain voice, style or rate of speech?
   # Build a script using `addLine()` with different parameters.
   
-  script = Script()
+  script = TtsScript()
   
   script.addLine(text) # Replace this with your logic based on the text
   

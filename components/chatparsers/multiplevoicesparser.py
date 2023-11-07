@@ -2,7 +2,9 @@ import json
 import re
 from types import NoneType
 from components.assistance import Assistance
-from components.texttospeech import TextToSpeech, Voices
+from components.texttospeech import TextToSpeech
+from components.utils.azurevoices import Voices
+from components.utils.ttsscript import TtsScript
 
 REGEX_STRING_WITH_NO_SQUARE_BRACKET = "[^\[\]]"
 

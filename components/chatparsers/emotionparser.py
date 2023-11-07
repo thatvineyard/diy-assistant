@@ -1,7 +1,8 @@
 import re
 from types import NoneType
 from components.assistance import Assistance
-from components.azuretts import Script, TextToSpeech, Voices, Styles
+from components.texttospeech import Script, TextToSpeech
+from components.utils.azurevoices import Styles
 
 REGEX_STRING_WITH_NO_SQUARE_BRACKET = "[^\[\]]"
 

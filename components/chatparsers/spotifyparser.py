@@ -1,8 +1,10 @@
 import re
 from types import NoneType
 from components.assistance import Assistance
-from components.voices.azuretts import Script, TextToSpeech, Voices, Styles
+from components.texttospeech import TextToSpeech
 from spotipy import Spotify
+
+from components.utils.ttsscript import TtsScript
 
 REGEX_STRING_WITH_NO_SQUARE_BRACKET = "[^\[\]]"
 
@@ -13,7 +15,7 @@ def parse(text: str, textToSpeech: TextToSpeech, spotipy: Spotify) -> Assistance
     print("No match")
     return 
   
-  script = Script()
+  script = TtsScript()
   
   for line in lines:
     bracketWord = re.match(f'\[({REGEX_STRING_WITH_NO_SQUARE_BRACKET}*)\]', line)
