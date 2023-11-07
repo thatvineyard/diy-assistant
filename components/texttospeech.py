@@ -29,7 +29,7 @@ class TextToSpeech:
 
     # More advanced tts using SSML syntax.    
     def speakSSML(self, script: TtsScript):
-        ssmlText = script.getSSML()
+        ssmlText = script.toSSML()
         result = self.speech_synthesizer.speak_ssml_async(ssmlText).get()
 
         TextToSpeech.__checkResult(result);
