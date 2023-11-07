@@ -8,8 +8,10 @@ class ChatSession:
 
   def __init__(self, apiKey: str, history_directory: str):
     openai.api_key = apiKey
+    
     self.chat_start_time = datetime.now()
-    self.history = ChatHistory()
+    file_name = f'{self.chat_start_time.strftime("%d-%m-%Y_%H-%M-%S")}.json'
+    self.history = ChatHistory(history_directory, file_name)
 
   def chat(self, question):
       # Provide the model name or ID
