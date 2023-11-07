@@ -24,6 +24,8 @@ def mapCharacterToVoice(character: str):
       return Voices.JANE
     case "Jenny":
       return Voices.JENNY
+    case "Robot":
+      return Voices.ROBOT
 
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
   lines = json.loads(text)

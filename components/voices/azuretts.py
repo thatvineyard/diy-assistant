@@ -10,6 +10,7 @@ class Voices:
   NANCY = "en-US-NancyNeural"
   JANE = "en-US-JaneNeural"
   JENNY = "en-US-JennyNeural"
+  ROBOT = "en-US-AIGenerate1Neural"
 
 class Styles: 
     advertisement_upbeat = "advertisement_upbeat" # 	Expresses an excited and high-energy tone for promoting a product or service.
@@ -48,7 +49,7 @@ class Styles:
     unfriendly = "unfriendly" # 	Expresses a cold and indifferent tone.
 
 class Script:
-    def __init__(self, defaultVoice: str = "en-US-AriaNeural"):
+    def __init__(self, defaultVoice: str = "en-US-AIGenerate1Neural"):
         self.lines = []
         self.defaultVoice = defaultVoice
 
