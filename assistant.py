@@ -32,7 +32,7 @@ args = arg_parser.parse_args()
 history_file_name = None
 if args.history_file is not None:
   history_file_path = Path(args.history_file)
-  history_file_name = history_file_path.relative_to(HISTORY_DIRECTORY)
+  history_file_name = str(history_file_path.relative_to(HISTORY_DIRECTORY))
 
 chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY, history_file_name)
 textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
