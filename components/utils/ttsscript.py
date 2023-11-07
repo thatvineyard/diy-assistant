@@ -26,9 +26,7 @@ class TtsScript:
 
   # Formats the script for printing in the console.
   def toString(self):
-    result = ""
-    "\n".join(map(lambda line: f'{line.print_prefix}{line.text}', self.lines))
-    return result
+    return "\n".join(map(lambda line: f'{line.print_prefix}{line.text}', self.lines))
 
 class TtsLine:
   """
