@@ -2,8 +2,7 @@ import json
 import re
 from types import NoneType
 from components.assistance import Assistance
-from components.azuretts import TextToSpeech
-from components.script import Script, Voices, Styles
+from components.texttospeech import TextToSpeech, Voices
 
 REGEX_STRING_WITH_NO_SQUARE_BRACKET = "[^\[\]]"
 
@@ -38,7 +37,7 @@ def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
     assistance.addAction(lambda: textToSpeech.speakText("There was an unexpected error when parsing JSON"), "Handling error")
     return assistance
 
-  script = Script()
+  script = TtsScript()
 
   for line in lines:
     character = line['voice']

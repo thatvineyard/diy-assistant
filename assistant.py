@@ -6,11 +6,11 @@ from colorama import Fore, Style
 
 from components.assistance import Assistance
 from components.chat import ChatSession
-from components.azuretts import TextToSpeech
 from components.chatparsers.multiplevoicesparser import parse
-from components.script import Script, Voices, Styles
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+
+from components.texttospeech import TextToSpeech
 
 # SETUP
 
