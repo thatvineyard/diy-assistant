@@ -6,7 +6,7 @@ from colorama import Fore, Style
 
 from components.assistance import Assistance
 from components.chat import ChatSession
-from components.chatparsers.multiplevoicesparser import parse
+from components.chatparsers.websiterecommender import parse
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
