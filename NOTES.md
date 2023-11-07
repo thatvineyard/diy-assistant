@@ -9,4 +9,4 @@
     - Fully automated video essays and news videos on youtube.
     - Writing code from a prompt
     - Writing tests based on given code
-    - Dungeons and Dragnons
+    - Dungeons and Dragons
