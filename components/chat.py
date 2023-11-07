@@ -7,9 +7,13 @@ from components.utils.chathistory import ChatHistory
 
 class ChatSession:
 
-  def __init__(self, apiKey: str, history_directory: str, history_file_name: str = None):
+  def __init__(self, apiKey: str, history_directory: str, history_file_name: str | None = None):
+    
+    # Set up OpenAI
+    self.model = 'gpt-3.5-turbo-0613'
     openai.api_key = apiKey
     
+    # Set up history file
     self.chat_start_time = datetime.now()
     
     if history_file_name is None:
@@ -21,9 +25,7 @@ class ChatSession:
       self.history = ChatHistory(history_directory, history_file_name)
 
   def chat(self, question):
-      # Provide the model name or ID
-      model = 'gpt-3.5-turbo-0613'
-
+      # Put together system prompt
       system_prompt = open('components/system-prompts/system-prompt.txt', "r").read()
       history_prompt = self.history.toHistoryPrompt()
       pre_question_prompt = "Respond to the following: "
@@ -32,16 +34,15 @@ class ChatSession:
 
       # Generate a chat completion
       response = openai.ChatCompletion.create(
-          model=model,
+          model=self.model,
           messages=[
               {"role": "system", "content": full_system_prompt},
               {"role": "user", "content": question}
           ]
       )
 
-      # Retrieve and return the generated response
+      # Retrieve, save and return the generated response
       answer = response.choices[0].message.content.strip()
-      
       self.history.saveChatRound(question, answer)
       
       return answer
