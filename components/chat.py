@@ -1,3 +1,4 @@
+import os
 import openai
 from datetime import datetime
 import json
@@ -6,12 +7,20 @@ from components.utils.chathistory import ChatHistory
 
 class ChatSession:
 
-  def __init__(self, apiKey: str, history_directory: str):
+  def __init__(self, apiKey: str, history_directory: str, history_file_name: str = None):
     openai.api_key = apiKey
     
     self.chat_start_time = datetime.now()
-    file_name = f'{self.chat_start_time.strftime("%d-%m-%Y_%H-%M-%S")}.json'
-    self.history = ChatHistory(history_directory, file_name)
+    
+    if history_file_name is None:
+      history_file_name = f'{self.chat_start_time.strftime("%d-%m-%Y_%H-%M-%S")}.json'
+    
+    if os.path.exists(f'{history_directory}/{history_file_name}'):
+      self.history = ChatHistory.fromFile(history_directory, history_file_name)
+      print(self.history.toHistoryPrompt)
+    else:
+      self.history = ChatHistory(history_directory, history_file_name)
+      print("starting new history")
 
   def chat(self, question):
       # Provide the model name or ID

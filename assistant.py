@@ -1,4 +1,6 @@
+import argparse
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 from colorama import Fore, Style
 
@@ -20,7 +22,19 @@ SPOTIFY_APP_ID=os.environ["SPOTIFY_APP_ID"]
 SPOTIFY_APP_SECRET=os.environ["SPOTIFY_APP_SECRET"]
 HISTORY_DIRECTORY=os.environ["HISTORY_DIRECTORY"]
 
-chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY)
+arg_parser = argparse.ArgumentParser(
+  prog="diy-assistant 🤖",
+  description="Talk to your own assistant!"
+)
+arg_parser.add_argument("-f", "--history_file", help="Path to previous history file to continue conversation", required=False)
+args = arg_parser.parse_args()
+
+history_file_name = None
+if args.history_file is not None:
+  history_file_path = Path(args.history_file)
+  history_file_name = history_file_path.relative_to(HISTORY_DIRECTORY)
+
+chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY, history_file_name)
 textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
 spotipy = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIFY_APP_ID, client_secret=SPOTIFY_APP_SECRET))
 
