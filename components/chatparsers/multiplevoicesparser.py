@@ -3,10 +3,37 @@ import re
 from types import NoneType
 from components.assistance import Assistance
 from components.texttospeech import TextToSpeech
-from components.utils.azurevoices import Voices
+from components.utils.azurevoices import Styles, Voices
 from components.utils.ttsscript import TtsScript
 
-REGEX_STRING_WITH_NO_SQUARE_BRACKET = "[^\[\]]"
+def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
+
+  assistance = Assistance()
+  
+  try:
+    lines = json.loads(text)
+  except json.JSONDecodeError:
+    print("Error parsing JSON. Falling back on simple text-to-speech.")
+    assistance.addAction(lambda: textToSpeech.speakText(text), "Reading text")
+    return assistance
+
+  script = TtsScript()
+
+  for line in lines:
+    character = line['voice']
+    text = line['text']
+    emotion = line['emotion']
+    
+    voice = mapCharacterToVoice(character)
+    style = mapEmotionToStyle(emotion)
+    print_prefix = f'{character}: '
+    
+    script.addLine(text, voice=voice, style=style, styleDegree=2, rate=1.5, print_prefix=print_prefix)
+
+  assistance.addAction(lambda : print(script.toString()), "Printing script")
+  assistance.addAction(lambda : textToSpeech.speakSSML(script), "Reading script")
+
+  return assistance
 
 def mapCharacterToVoice(character: str):
   match character:
@@ -29,27 +56,23 @@ def mapCharacterToVoice(character: str):
     case _:
       return Voices.ROBOT
 
-def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
-
-  assistance = Assistance()
-  
-  try:
-    lines = json.loads(text)
-  except json.JSONDecodeError:
-    assistance.addAction(lambda: textToSpeech.speakText("There was an unexpected error when parsing JSON"), "Handling error")
-    return assistance
-
-  script = TtsScript()
-
-  for line in lines:
-    character = line['voice']
-    text = line['text']
-    emotion = line['emotion']
-    script.addLine(text, voice=mapCharacterToVoice(character), styleDegree=2, rate=1.5)
-
-  assistance.addAction(lambda : print(script.toString()), "Printing script")
-  assistance.addAction(lambda : textToSpeech.speakSSML(script), "Reading script")
-
-  return assistance
-
-
+def mapEmotionToStyle(emotion: str):
+  match emotion:
+    case "Sad":
+      return Styles.sad
+    case "Angry":
+      return Styles.angry
+    case "Happy":
+      return Styles.cheerful
+    case "Terrified":
+      return Styles.terrified
+    case "Shouting":
+      return Styles.shouting
+    case "Whispering":
+      return Styles.whispering
+    case "Excited":
+      return Styles.excited
+    case "Normal":
+      return ""
+    case _:
+      return ""
