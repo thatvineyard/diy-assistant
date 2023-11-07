@@ -28,8 +28,15 @@ def mapCharacterToVoice(character: str):
       return Voices.ROBOT
 
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
-  lines = json.loads(text)
+
+  assistance = Assistance()
   
+  try:
+    lines = json.loads(text)
+  except json.JSONDecodeError:
+    assistance.addAction(lambda: textToSpeech.speakText("There was an unexpected error when parsing JSON"), "Handling error")
+    return assistance
+
   script = Script()
 
   for line in lines:
@@ -39,7 +46,6 @@ def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
     
     script.addLine(text, voice=mapCharacterToVoice(character), styleDegree=2, rate=1.5)
 
-  assistance = Assistance()
   assistance.addAction(lambda : textToSpeech.speakSSML(script), "Reading script")
 
   return assistance
