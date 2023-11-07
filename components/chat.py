@@ -1,4 +1,5 @@
 import os
+import re
 import openai
 from datetime import datetime
 import json
@@ -41,6 +42,8 @@ class ChatSession:
 
       # Retrieve and return the generated response
       answer = response.choices[0].message.content.strip()
+      
+      answer = re.sub(r'\s+', ' ', answer)
       
       self.history.saveChatRound(question, answer)
       
