@@ -1,6 +1,6 @@
 from components.assistance import Assistance
-from components.texttospeech import TextToSpeech
-from components.utils.ttsscript import TtsScript
+from components.utils.voice.texttospeech import TextToSpeech
+from components.utils.voice.ttsscript import TtsScript
 
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
   # Do some sort of string matching, such as a regex.
@@ -13,7 +13,7 @@ def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
   
   assistance = Assistance()
   assistance.addAction(lambda : print(text), "Print message")
-  assistance.addAction(lambda : textToSpeech.speakSSML(script), "Reading message")
+  assistance.addAction(lambda : textToSpeech.speakScript(script), "Reading message")
   
   # Feel free to have the AI do other things than just affect the way the text is read. This will come up in the next step.
   

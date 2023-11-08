@@ -1,10 +1,9 @@
 import json
-import re
-from types import NoneType
+
 from components.assistance import Assistance
-from components.texttospeech import TextToSpeech
-from components.utils.azurevoices import Styles, Voices
-from components.utils.ttsscript import TtsScript
+from components.utils.voice.texttospeech import TextToSpeech
+from components.utils.voice.azurevoices import Styles, Voices
+from components.utils.voice.ttsscript import TtsScript
 
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
 
@@ -31,7 +30,7 @@ def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
     script.addLine(text, voice=voice, style=style, styleDegree=2, rate=1.5, print_prefix=print_prefix)
 
   assistance.addAction(lambda : print(script.toString()), "Printing script")
-  assistance.addAction(lambda : textToSpeech.speakSSML(script), "Reading script")
+  assistance.addAction(lambda : textToSpeech.speakScript(script), "Reading script")
 
   return assistance
 

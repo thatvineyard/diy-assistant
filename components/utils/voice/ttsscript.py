@@ -1,5 +1,5 @@
 
-from components.utils.ssmlformatter import SsmlFormatter
+from components.utils.voice.ssmlformatter import SsmlFormatter
 
 class TtsScript:
   """
@@ -11,21 +11,23 @@ class TtsScript:
       self.lines: list[TtsLine] = []
       self.defaultVoice = defaultVoice
   
-  # Use this function to add a line to the script
   def addLine(self, text: str, voice: str = "", style: str = "", styleDegree: int = 1, rate: int = -1, print_prefix: str = ""):
+    """Use this function to add a line to the script"""
+    
     if(voice == ""):
       voice = self.defaultVoice
     
     self.lines.append(TtsLine(text, voice, style, styleDegree, rate, print_prefix))
     
-  # Converts this script to a SSML format to be used by Azure text-to-speech service.
   def toSSML(self):      
+    """Converts this script to a SSML format to be used by Azure text-to-speech service."""
+    
     allLines = "\n".join(map(lambda line: line.toSSML(), self.lines))
     allLines = SsmlFormatter.encaseInSSMLTag(allLines)
     return allLines
 
-  # Formats the script for printing in the console.
   def toString(self):
+    """Formats the script for printing in the console."""
     return "\n".join(map(lambda line: f'{line.print_prefix}{line.text}', self.lines))
 
 class TtsLine:
@@ -42,6 +44,7 @@ class TtsLine:
     self.print_prefix = print_prefix
   
   def toSSML(self):
+    """Adds SSML tags to line. Note that it does not add the final tags that are required to send to Azure TTS, so make sure to run encaseInSSMLTag on the collection of SSML lines."""
     ssml_text = self.text
     if(self.style != ""):
         ssml_text = SsmlFormatter.encaseInSpeakingStyleTag(ssml_text, self.style, self.styleDegree)
