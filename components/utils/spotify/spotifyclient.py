@@ -106,5 +106,5 @@ class SpotipyClient:
   def setVolume(self, volume: int):
     """Set playback volume"""
     
-    volume = max(100, min(0, volume))
+    volume = min(100, max(0, volume))
     self.client.volume(volume_percent=volume, device_id=self.device.id)

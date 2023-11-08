@@ -18,7 +18,7 @@ class ChatSession:
       """Build a prompt, send to openAI and then save the history"""
       
       # Put together system prompt
-      system_prompt = open('components/system-prompts/system-prompt.txt', "r").read()
+      system_prompt = open('components/system-prompt.txt', "r").read()
       history_prompt = self.history.toHistoryPrompt()
       pre_question_prompt = "Respond to the following: "
       full_system_prompt = system_prompt + history_prompt + pre_question_prompt
@@ -29,7 +29,7 @@ class ChatSession:
       
       return response
 
-  def __getOrCreateChatHistory(history_directory: str, history_file_path: str | None = None):
+  def __getOrCreateChatHistory(self, history_directory: str, history_file_path: str | None = None):
       if history_file_path is not None:
         history_file_name = str(Path(history_file_path).relative_to(history_directory))
       else:

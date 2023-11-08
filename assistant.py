@@ -6,7 +6,7 @@ from colorama import Fore, Style
 
 from components.assistance import Assistance
 from components.chat import ChatSession
-from components.examples.chatparsers.websiterecommenderparser import parse
+from components.examples.chatparsers.multiplevoicesparser import parse
 from components.utils.voice.texttospeech import TextToSpeech
 from components.utils.spotify.spotifyclient import SpotipyClient
 
@@ -42,16 +42,16 @@ spotipy = SpotipyClient(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIEN
 
 while True: 
   # Receives a text from console input.
-  question = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
+  question: str = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
 
   # ask openAI for an answer
-  answer = chatSession.chat(question)
+  answer: str = chatSession.chat(question)
 
   # print answer to debug if needed
   # print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
 
   # PARSE
-  assistance = parse(answer, textToSpeech)
+  assistance: Assistance = parse(answer, textToSpeech)
 
   # EXECUTE
   assistance.execute()

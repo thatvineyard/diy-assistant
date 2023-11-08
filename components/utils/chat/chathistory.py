@@ -71,5 +71,5 @@ class ChatHistory:
             history_prompt += round.toPrompt()
         return history_prompt
 
-    def removeWhitespace(text):
+    def removeWhitespace(self, text):
         return re.sub(r'\s+', ' ', text)
