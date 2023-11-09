@@ -7,9 +7,6 @@ import webbrowser
 
 from components.assistance import Assistance
 from components.chat import ChatSession
-from components.parser import parse
-from components.utils.voice.texttospeech import TextToSpeech
-from components.utils.spotify.spotifyclient import SpotipyClient
 
 ##############
 ### SET UP ###
