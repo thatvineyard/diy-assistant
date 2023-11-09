@@ -2,5 +2,4 @@ elevenlabs==0.2.26
 openai==0.28.0
 python-dotenv==1.0.0
 azure-cognitiveservices-speech==1.32.1
-spotipy==2.23.0
-termcolor==2.3.0
+spotipy==2.23.0 
