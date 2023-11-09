@@ -1,6 +1,8 @@
 
 import openai
 
+# STEP 1
+
 class OpenAiClient:
   """A wrapper class to handle communicating with openai"""
   

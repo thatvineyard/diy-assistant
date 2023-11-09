@@ -6,6 +6,7 @@ from components.utils.voice.texttospeech import TextToSpeech
 from components.utils.voice.azurevoices import Styles, Voices
 from components.utils.voice.ttsscript import TtsScript
 
+# STEP 4
 
 REGEX_STRING_WITH_NO_SQUARE_BRACKET = "[^\[\]]"
 

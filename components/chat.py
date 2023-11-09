@@ -6,6 +6,8 @@ from datetime import datetime
 from components.utils.chat.chathistory import ChatHistory
 from components.utils.chat.openai import OpenAiClient
 
+# STEP 1
+
 class ChatSession:
   """A class used to chat with openAI and to keep track of the history."""
   

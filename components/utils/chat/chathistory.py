@@ -2,6 +2,8 @@ import json
 import os
 import re
 
+# STEP 1
+
 class ChatRound:
     """
     Represents one question and response

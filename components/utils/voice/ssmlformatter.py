@@ -1,3 +1,5 @@
+# STEP 3
+
 class SsmlFormatter:
   """
   Utility class that provides static methods for formatting a given text with voice and style into SSML.

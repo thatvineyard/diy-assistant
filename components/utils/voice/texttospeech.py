@@ -2,6 +2,8 @@ import azure.cognitiveservices.speech as speechsdk
 
 from components.utils.voice.ttsscript import TtsLine, TtsScript
 
+# STEP 2
+
 class TextToSpeech:
     def __init__(self, speech_key, service_region, defaultVoice: str = "en-US-AriaNeural"):
         self.speech_key = speech_key

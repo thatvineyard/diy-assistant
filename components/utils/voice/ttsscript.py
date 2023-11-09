@@ -1,6 +1,8 @@
 
 from components.utils.voice.ssmlformatter import SsmlFormatter
 
+# STEP 3
+
 class TtsScript:
   """
   A class used to build a text-to-speech script by adding lines with different voices and emotions. 

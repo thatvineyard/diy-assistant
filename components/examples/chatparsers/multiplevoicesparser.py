@@ -5,6 +5,8 @@ from components.utils.voice.texttospeech import TextToSpeech
 from components.utils.voice.azurevoices import Styles, Voices
 from components.utils.voice.ttsscript import TtsScript
 
+# STEP 3
+
 def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
 
   assistance = Assistance()

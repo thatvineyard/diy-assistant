@@ -5,6 +5,8 @@ from flask import app
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
+# STEP 4
+
 class Track:
   """
   Model class for spotify api track object.
