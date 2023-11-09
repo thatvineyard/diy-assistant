@@ -36,7 +36,7 @@ def parse(text: str, textToSpeech: TextToSpeech) -> Assistance:
   assistance.addAction(lambda: textToSpeech.speakScript(script), "🗣️ Speaking message")
   
   # If we got the correct JSON, we can add an action to open the browser with the given URL
-  if response['searchMethod'] is not None and response['searchTerm'] is not None:
+  if "searchMethod" in response is not None and "searchTerm" in response is not None:
     searchMethod, searchTerm = response['searchMethod'], response['searchTerm']
     searchUrl = getUrl(searchMethod, searchTerm)
     assistance.addAction(lambda : webbrowser.open_new(searchUrl), f'🔎 Opening browser and searching for {searchTerm} using {searchMethod}')
