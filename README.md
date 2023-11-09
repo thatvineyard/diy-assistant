@@ -11,7 +11,7 @@ The main inspiration for this workshop comes from the Twitch streamer and Youtub
 ## Goal
 
 1. Build a python script that communicates with OpenAI
-2. Connect to Azure's text-to-speech to have the AI read its answers aloud. 
+2. Connect to Azure's text-to-speech to have the AI read its answers aloud.
 3. Add instructions to the system prompt to make the AI include syntax that we can parse, and use this to affect the text-to-speech voice.
 4. Add more instructions to allow it to search for Spotify songs.
 
