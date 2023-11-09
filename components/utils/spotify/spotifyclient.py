@@ -1,7 +1,6 @@
 import json
 import math
 from multiprocessing import Process
-from flask import app
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
