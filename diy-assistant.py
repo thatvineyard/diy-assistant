@@ -33,10 +33,12 @@ arg_parser.add_argument("-f", "--history_file", help=f'If a history file exists,
 args = arg_parser.parse_args()
 
 # Set up utilities
-# STEP 1: chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY, args.history_file)
+# STEP 1: 
+# chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY, args.history_file)
 # STEP 2: 
-textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
-# STEP 4: spotipy = SpotipyClient(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET)
+# textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
+# STEP 4: 
+# spotipy = SpotipyClient(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET)
 
 ############
 ### CHAT ###
