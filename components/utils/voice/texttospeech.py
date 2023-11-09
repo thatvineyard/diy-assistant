@@ -1,6 +1,8 @@
 import azure.cognitiveservices.speech as speechsdk
 
-from components.script import Script
+from components.utils.voice.ttsscript import TtsLine, TtsScript
+
+# STEP 2
 
 class TextToSpeech:
     def __init__(self, speech_key, service_region, defaultVoice: str = "en-US-AriaNeural"):
@@ -21,21 +23,24 @@ class TextToSpeech:
             speech_config=speech_config
         )
 
-    # Basic tts without directives, uses default voice.
     def speakText(self, text: str):
+        """Basic tts without directives, uses default voice."""
+        
         result = self.speech_synthesizer.speak_text_async(text).get()
          
         TextToSpeech.__checkResult(result);
 
-    # More advanced tts using SSML syntax.    
-    def speakSSML(self, script: Script):
-        ssmlText = script.getSSML()
+    def speakScript(self, script: TtsScript):
+        """Collection of advanced tts using SSML syntax."""
+        
+        ssmlText = script.toSSML()
         result = self.speech_synthesizer.speak_ssml_async(ssmlText).get()
 
         TextToSpeech.__checkResult(result);
 
     def __checkResult(result):
-      # Checks result.
+        """Checks result of TTS generation and gives helpful error messages if something failed"""
+        
         if result.reason == speechsdk.ResultReason.Canceled:
             cancellation_details = result.cancellation_details
             print("Speech synthesis canceled: {}".format(cancellation_details.reason))
