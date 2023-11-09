@@ -7,7 +7,7 @@ import webbrowser
 
 from components.assistance import Assistance
 from components.chat import ChatSession
-from components.parser import parse
+from components.examples.chatparsers.spotifyparser import parse
 from components.utils.voice.texttospeech import TextToSpeech
 from components.utils.spotify.spotifyclient import SpotipyClient
 
@@ -52,5 +52,5 @@ while True:
   # print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
 
   # Extract parsing to it's own function
-  assistance = parse(answer, textToSpeech)
+  assistance = parse(answer, textToSpeech, spotipy)
   assistance.execute()
