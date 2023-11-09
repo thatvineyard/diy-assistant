@@ -5,6 +5,7 @@ meta:
   siteName:
   sns: ['twitter']
 slide:
+  chart: true
   loop: false
   ui:
     sidebar: true

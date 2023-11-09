@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "fusuma": "^2.8.4"
+  },
+  "dependencies": {
+    "mermaid": "^10.6.1"
   }
 }

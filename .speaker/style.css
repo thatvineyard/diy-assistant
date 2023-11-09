@@ -25,7 +25,13 @@
 /* --account-icon-size: 3rem; */
 /* } */
 
-.title {
+.talk {
+  background-color: #122730;
+  color: #eee;
+  
+  h1, h2, h3 {
+    color: #eee;
+  }
 }
 
 /* https://hiroppy.github.io/fusuma/docs/guides/slide-syntax#declaring-section-title */

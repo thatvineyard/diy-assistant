@@ -1,17 +1,16 @@
+<!-- classes: talk -->
 
 # diy-assistant 🤖
 
 Carl Wingårdh, Andreas Röckert
 
 ---
-<!-- classes: title -->
+<!-- classes: talk -->
 
-adlkwmdlwm
-<!-- block-start: grid -->
-<!-- account: twitter, your-account-name -->
-<!-- block-end -->
+## What is AI for?
+
+<!-- - ✍️ Cheating on homework -->
 
 ---
-<!-- section-title: Bye👋 -->
 
 ## Bye👋
