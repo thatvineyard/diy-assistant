@@ -1,10 +1,10 @@
 <!-- classes: talk -->
 
-# diy-assistant 🤖
+# diy-assistant workshop
 
-Build your own assistant using LLMs
+# 🤖
 
-#### Carl Wingårdh, Andreas Röckert
+Build your own assistant using LLMs and python
 
 ---
 <!-- classes: talk -->
@@ -204,9 +204,19 @@ python diy-assistant.py
 ---
 <!-- classes: talk -->
 
-# You need some help
+# Step-0: Setup
 
-Add an action to `diy-assistant.py`
+An `Assistance` is an object which you load with actions and then execute at the end.
+
+```python
+components/assitance.py
+
+    class Assistance:
+      assistance.addAction(...)
+      assistance.exectue()
+```
+
+Add an action to the `assistance` object in `diy-assistant.py`
 
 ```python
 assistance.addAction(lambda : print("Hello world"), "Print hello world")
