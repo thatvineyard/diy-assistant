@@ -238,6 +238,28 @@ Try new actions `speakText(text)` and `speakSSML(script)`.
 
 ---
 <!-- classes: talk -->
+# Parse chat output
+
+```ascii
+     ___________________________________________________________________
+    / Yes, feeding your homework to you you dog is a good idea.         \
+   / Here is a wikipedia page about the benefits of dogs eating homework \
+🤖/\____________________________________________________________________/
+```
+
+Need a way to parse the text output into actions.
+
+Instruct to respond in json-format
+
+```json
+{
+    "message": "Yes, feeding your homework to you you dog is a good idea. Here is a wikipedia page about the benefits of dogs eating homework",
+    "url": "https://en.wikipedia.org/wiki/The_Dog_Ate_My_Homework",
+}
+```
+
+---
+<!-- classes: talk -->
 # Step-3: Parser
 
 Instruct OpenAI to provide text based instructions in a specific syntax, e.g. json.
@@ -258,7 +280,9 @@ Code ❤️ OpenAI
 
 Leverage creativity of LLM and provide it with natural language instructions which can be parsed using python code.
 
-1. Communicate with OpenAI
+Today we:
+
+1. Communicated with OpenAI
 2. Give the assistant a voice
 3. Parse text based instructions in specific syntax
 4. Parse to additional api-calls, spotify
@@ -267,4 +291,6 @@ Leverage creativity of LLM and provide it with natural language instructions whi
 <!-- classes: talk -->
 # Thanks
 
-Bow down to your future overlord 🤖
+Go fourth and create the intelligent assistant and hope that they don't take you job!
+
+👋
