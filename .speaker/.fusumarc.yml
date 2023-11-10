@@ -3,9 +3,8 @@ meta:
   title:
   description:
   siteName:
-  sns: ['twitter']
+  sns: ["twitter"]
 slide:
-  chart: true
   loop: false
   ui:
     sidebar: true
