@@ -39,4 +39,6 @@ h1, h2, h3 {
 
 pre {
   background-color: #000;
+  text-align: justify;
+  padding: 20px;
 }

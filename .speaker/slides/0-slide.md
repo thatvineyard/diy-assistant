@@ -180,14 +180,12 @@ python -m venv .venv
 1. Activate venv
 
 ```pwsh
+# One of these three should work
+
 ./.venv/Scripts/activate
-```
 
-```bash
 source .venv/Scripts/activate
-```
 
-```zsh
 source .venv/bin/active
 ```
 
@@ -203,7 +201,22 @@ python install -r requirements.txt
 python diy-assistant.py
 ```
 
-4. Add an action to `diy-assistant.py`
+---
+<!-- classes: talk -->
+
+# You need some help
+
+Add an action to `diy-assistant.py`
+
+```python
+assistance.addAction(lambda : print("Hello world"), "Print hello world")
+
+
+assistance.addAction(lambda : os.startfile('C:/'), "Open file explorer")
+
+
+assistance.addAction(lambda : os.system('shutdown -s'), "Shut down computer")
+```
 
 <!-- Make sure to give an overview of the code and that we have abstracted execution by the assistant to actions -->
 
@@ -225,7 +238,6 @@ New files:
 
 ```bash
 components/chat.py
-
 components/system-prompt.txt
 ```
 
