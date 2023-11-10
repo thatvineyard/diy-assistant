@@ -2,9 +2,33 @@
 
 # diy-assistant 🤖
 
-Carl Wingårdh, Andreas Röckert
+Build your own assistant using LLMs
 
-## Build your own assistant using LLMs
+#### Carl Wingårdh, Andreas Röckert
+
+---
+<!-- classes: talk -->
+
+<!-- block-start: grid -->
+
+<!-- block-start: column -->
+
+## Carl Wingårdh
+![Carl](https://cache.sessionize.com/image/0a15-400o400o2-L7D94sCGh6pgjQwZb4etgw.png)
+
+Utvecklare på Uppsalakontoret
+
+<!-- block-end -->
+<!-- block-start: column -->
+
+## Andreas Röckert
+![Andreas](https://cache.sessionize.com/image/68e0-400o400o2-EN4GZd1sXvbNTdU8ZUTaTA.png)
+
+Utvecklare på Uppsalakontoret
+
+<!-- block-end -->
+
+<!-- block-end -->
 
 ---
 <!-- classes: talk -->
@@ -12,8 +36,6 @@ Carl Wingårdh, Andreas Röckert
 ## What can you use LLMs for?
 
 <!-- block-start: grid -->
-
-<!-- fragments-start -->
 
 <!-- block-start: column -->
 
@@ -29,7 +51,7 @@ Carl Wingårdh, Andreas Röckert
 
 ## ✍️
 
-### Cheating on your homework
+#### Cheating on your homework
 
 <!-- block-end -->
 
@@ -44,9 +66,9 @@ Carl Wingårdh, Andreas Röckert
 🤖/\____________________________/
 ```
 
-## 🤖
+## 📰
 
-### Fully automating writing articles and handling customer relations
+#### Fully automating writing articles
 
 <!-- block-end -->
 
@@ -63,11 +85,9 @@ Carl Wingårdh, Andreas Röckert
 
 ## 👍
 
-### Automate comments that say good things
+#### Automate fake comments that say good things when nobody else seems to
 
 <!-- block-end -->
-
-<!-- fragments-end -->
 
 <!-- block-end -->
 
@@ -77,8 +97,10 @@ Carl Wingårdh, Andreas Röckert
 
 # It's alive! 🧌
 
+
 It __almost__ seems like it is has intelligence and can make decisions
 
+<!-- fragments-start -->
 ```ascii
     _______________________________________________________________
    / My favorite song is William Shatner's rendition of Rocket man \
@@ -91,7 +113,9 @@ But can we make it act on those "decisions"?
 > 🤖 Play Rocket Man cover by William Shatner in Rocket man 
 ```
 
-That's what we want to do today.
+### That's the plan
+
+<!-- fragments-end -->
 
 ---
 <!-- classes: talk -->
@@ -107,6 +131,7 @@ That's what we want to do today.
 2. Tell it how to respond to you
 3. Give it a voice
 4. Give it the power to do stuff
+
 
 ---
 <!-- classes: talk -->
@@ -203,7 +228,7 @@ Post promts in #opkoko-diyassistant
 
 ---
 <!-- classes: talk -->
-# Step-2: Text to Speach
+# Step-2: Text to Speech
 
 Give your bot a voice!
 
