@@ -25,16 +25,14 @@
 /* --account-icon-size: 3rem; */
 /* } */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 .talk {
   background-color: #122730;
   color: #eee;
-  
+  font-family: 'Roboto Slab', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1, h2, h3 {
   color: #eee;
-}
-
-/* https://hiroppy.github.io/fusuma/docs/guides/slide-syntax#declaring-section-title */
-.section-title {
 }

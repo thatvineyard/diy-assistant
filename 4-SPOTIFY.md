@@ -2,7 +2,7 @@
 
 ## 1. This time we don't need new files
 
-The goal for this step is to use the provided Spotify library (which has been added to `assistant.py`) to have the AI affect things other than its speech.
+The goal for this step is to use the provided Spotify library (which has been added to `diy-assistant.py`) to have the AI affect things other than its speech.
 
 > Note: The plan was to have the AI control your Spotify account but the time ran out, so we can only do non-account related things such as search
 

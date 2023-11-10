@@ -11,41 +11,73 @@ Carl Wingårdh, Andreas Röckert
 
 ## What can you use LLMs for?
 
+<!-- block-start: grid -->
+
+<!-- fragments-start -->
+
+<!-- block-start: column -->
+
 <!-- note If you're a student with 5 minutes to your deadline -->
-- ✍️ Cheating on your homework
 
 ```ascii
-    _______________________________________________________________________
-   / A toilet is a piece of sanitary hardware that collects human urine... \
-🤖/\_______________________________________________________________________/
+    ________________________________
+   / A toilet is a piece of         \
+  | sanitary hardware that collects  |
+  |  human urine...                  |
+🤖/\________________________________/
 ```
+
+## ✍️
+
+### Cheating on your homework
+
+<!-- block-end -->
+
+<!-- block-start: column -->
 
 <!-- note Maybe you are a megacorporation hell bent on saving money wherever you can -->
-- 🤖 Fully automating writing articles and handling customer relations
-
 ```ascii
-    ______________________________________________________________________________
-   / Taylor Swift was seen today eating a hot dog. Hot dog stock price surges ... \
-🤖/\______________________________________________________________________________/
+    _____________________________
+   / Taylor Swift was seen today \
+   | eating a hot dog. Hot dog   |
+   | stock price surge ...       |
+🤖/\____________________________/
 ```
+
+## 🤖
+
+### Fully automating writing articles and handling customer relations
+
+<!-- block-end -->
+
+<!-- block-start: column -->
 
 <!-- note A shady amazon retailer who wants it to look like people like your product -->
-- 👍 Automate comments that say good things
-
 ```ascii
-    _________________________________________________________
-   / I am really happy with the purchase of my Bored Ape NFT \
-🤖/\________________________________________________________/
+
+    _____________________________
+   / I am really happy with the  \
+   | purchase of my Bored Ape NFT | 
+🤖/\_____________________________/
 ```
 
-But what if we want to make it do more than just give us text that we copy-paste somewhere?
+## 👍
+
+### Automate comments that say good things
+
+<!-- block-end -->
+
+<!-- fragments-end -->
+
+<!-- block-end -->
 
 ---
+
 <!-- classes: talk -->
 
-# It's alive!!!
+# It's alive! 🧌
 
-It almost seems like it is has intelligence and can make decisions
+It __almost__ seems like it is has intelligence and can make decisions
 
 ```ascii
     _______________________________________________________________
@@ -63,7 +95,8 @@ That's what we want to do today.
 
 ---
 <!-- classes: talk -->
-# The plan
+
+# The plan 🤔
 
 <!-- 1. Start chatting with OpenAI in a Python script
 2. Connect to Azure's text-to-speech to have the AI read its answers aloud.
@@ -77,6 +110,7 @@ That's what we want to do today.
 
 ---
 <!-- classes: talk -->
+<!-- qr: https://join.slack.com/share/enQtNjE3NTMwNDcwNjY5My05NzE1Y2Y3OGU3MTdlMjBkMDBhZjg5MmY3Yjk2NWU3MGNmNzQwOTNhOWEyOTQ0ZDExNTFlOTdmNTY4Y2E2OTdj -->
 # #opkoko-diyassistant
 
 - Link to repo
@@ -91,6 +125,7 @@ That's what we want to do today.
 
 Work from branches in the repo.
 
+- `0-setup`
 - `1-openai`
 - `2-tts`
 - `3-parse`

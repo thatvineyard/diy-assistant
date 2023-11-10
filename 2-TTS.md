@@ -6,7 +6,7 @@ A new file `components/azuretts.py` has appeared and has been integrated with `a
 
 `speakText` is a simple version which reads the text in the default voice.
 
-Try it out by running `py assistant.py` and listening to how it sounds.
+Try it out by running `py diy-assistant.py` and listening to how it sounds.
 
 ## 2. Give your voice a voice
 

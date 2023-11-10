@@ -14,7 +14,7 @@ Copy `.env.example` to a new file called `.env` and replace the placeholders.
 
 ## 3. Test the application
 
-Try running `py assistant.py`.
+Try running `py diy-assistant.py`.
 
 Look around in `assistant` and `components/assistance.py`
 
