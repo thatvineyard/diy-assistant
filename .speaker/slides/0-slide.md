@@ -263,10 +263,11 @@ Need a way to parse the text output into actions.
 Instruct to respond in json-format
 
 ```json
-{
-    "message": "Yes, feeding your homework to you you dog is a good idea. Here is a wikipedia page about the benefits of dogs eating homework",
-    "url": "https://en.wikipedia.org/wiki/The_Dog_Ate_My_Homework",
-}
+{                                                                                   
+    "message": "Yes, feeding your homework to you you dog is a good idea. Here is a
+    wikipedia page about the benefits of dogs eating homework",                    
+    "url": "https://en.wikipedia.org/wiki/The_Dog_Ate_My_Homework",                
+}                                                                                  
 ```
 
 ---
