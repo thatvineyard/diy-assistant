@@ -42,11 +42,13 @@ Utvecklare på Uppsalakontoret
 <!-- note If you're a student with 5 minutes to your deadline -->
 
 ```ascii
-    ________________________________
-   / A toilet is a piece of         \
-  | sanitary hardware that collects  |
-  |  human urine...                  |
-🤖/\________________________________/
+
+    ________________________
+   / A toilet is a piece of \
+  | sanitary hardware that   |
+  | collects human urine...  |
+🤖/\________________________/
+
 ```
 
 ## ✍️
@@ -59,11 +61,13 @@ Utvecklare på Uppsalakontoret
 
 <!-- note Maybe you are a megacorporation hell bent on saving money wherever you can -->
 ```ascii
-    _____________________________
-   / Taylor Swift was seen today \
-   | eating a hot dog. Hot dog   |
-   | stock price surge ...       |
-🤖/\____________________________/
+    ________________________
+   / Taylor Swift was seen  \
+   | today eating a hot dog. |
+   | Hot dog stock price     |
+   | surge ...               |
+🤖/\________________________/
+
 ```
 
 ## 📰
@@ -77,10 +81,12 @@ Utvecklare på Uppsalakontoret
 <!-- note A shady amazon retailer who wants it to look like people like your product -->
 ```ascii
 
-    _____________________________
-   / I am really happy with the  \
-   | purchase of my Bored Ape NFT | 
-🤖/\_____________________________/
+    ________________________
+   / I am really happy with \
+   | the purchase of my      |
+   | Bored Ape NFT           | 
+🤖/\________________________/
+
 ```
 
 ## 👍
@@ -95,7 +101,9 @@ Utvecklare på Uppsalakontoret
 
 <!-- classes: talk -->
 
-# It's alive! 🧌
+![Frankenstein](https://i.giphy.com/media/tze1mGedykiuk/giphy.webp)
+
+# It's alive!
 
 
 It __almost__ seems like it is has intelligence and can make decisions
@@ -105,15 +113,16 @@ It __almost__ seems like it is has intelligence and can make decisions
     _______________________________________________________________
    / My favorite song is William Shatner's rendition of Rocket man \
 🤖/\_______________________________________________________________/
+
 ```
 
 But can we make it act on those "decisions"?
 
 ```ascii
-> 🤖 Play Rocket Man cover by William Shatner in Rocket man 
+> 🤖 Play Rocket Man cover by William Shatner in Rocket man on Spotify
 ```
 
-### That's the plan
+<!-- note that's what we're gonna do today -->
 
 <!-- fragments-end -->
 
@@ -127,11 +136,13 @@ But can we make it act on those "decisions"?
 3. Add instructions to the system prompt to make the AI include syntax that we can parse, and use this to affect the text-to-speech voice.
 4. Add more instructions to allow it to search for Spotify songs. -->
 
+0. Get comfortable with the code base
 1. Start chatting with OpenAI in a Python script
-2. Tell it how to respond to you
-3. Give it a voice
-4. Give it the power to do stuff
-
+   - Tell it how to respond to you
+   - Give it a personality
+2. Give it a voice
+3. Give it the power to do stuff
+4. Keep building on it and add Spotify connection
 
 ---
 <!-- classes: talk -->
@@ -139,8 +150,8 @@ But can we make it act on those "decisions"?
 # #opkoko-diyassistant
 
 - Link to repo
-- Api-keys (will be rotated after the workshop)
-- Board for workshop events
+- Api-keys
+- A place to show off what you've done
 
 <!-- <https://github.com/thatvineyard/diy-assistant> -->
 
