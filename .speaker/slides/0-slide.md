@@ -16,7 +16,7 @@ Build your own assistant using LLMs and python
 ## Carl Wingårdh
 ![Carl](https://cache.sessionize.com/image/0a15-400o400o2-L7D94sCGh6pgjQwZb4etgw.png)
 
-Utvecklare på Uppsalakontoret
+Developer at Uppsalakontoret
 
 <!-- block-end -->
 <!-- block-start: column -->
@@ -24,11 +24,16 @@ Utvecklare på Uppsalakontoret
 ## Andreas Röckert
 ![Andreas](https://cache.sessionize.com/image/68e0-400o400o2-EN4GZd1sXvbNTdU8ZUTaTA.png)
 
-Utvecklare på Uppsalakontoret
+Developer at Uppsalakontoret
 
 <!-- block-end -->
 
 <!-- block-end -->
+
+---
+<!-- classes: talk -->
+
+# A primer on large language models
 
 ---
 <!-- classes: talk -->
@@ -241,6 +246,10 @@ assistance.addAction(lambda : os.system('shutdown -s'), "Shut down computer")
 Try making your own personality!
 
 ```bash
+git merge 1-openai
+
+# OR
+
 git checkout 1-openai
 ```
 
@@ -262,6 +271,14 @@ Post promts in #opkoko-diyassistant
 ---
 <!-- classes: talk -->
 # Step-2: Text to Speech
+
+```bash
+git merge 2-tts
+
+# OR
+
+git checkout 2-tts
+```
 
 Give your bot a voice!
 
@@ -298,9 +315,25 @@ Instruct to respond in json-format
 
 Instruct OpenAI to provide text based instructions in a specific syntax, e.g. json.
 
+```bash
+git merge 3-parse
+
+# OR
+
+git checkout 3-parse
+```
+
 ---
 <!-- classes: talk -->
 # Step-4: Spotify
+
+```bash
+git merge 4-spotify
+
+# OR
+
+git checkout 4-spotify
+```
 
 - Parse the output to another api-call.
 - In this case, make it play music with spotify.

@@ -7,7 +7,7 @@ import webbrowser
 
 from components.assistance import Assistance
 from components.chat import ChatSession
-from components.parser import parse
+from components.examples.chatparsers.multiplevoicesparser import parse
 from components.utils.voice.texttospeech import TextToSpeech
 from components.utils.spotify.spotifyclient import SpotipyClient
 
@@ -34,11 +34,11 @@ args = arg_parser.parse_args()
 
 # Set up utilities
 # STEP 1: 
-# chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY, args.history_file)
+chatSession = ChatSession(OPENAI_KEY, HISTORY_DIRECTORY, args.history_file)
 # STEP 2: 
-# textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
+textToSpeech = TextToSpeech(AZURE_KEY_1, AZURE_SERVICE_REGION)
 # STEP 4: 
-# spotipy = SpotipyClient(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET)
+spotipy = SpotipyClient(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET)
 
 ############
 ### CHAT ###
@@ -46,18 +46,18 @@ args = arg_parser.parse_args()
 
 while True: 
   # STEP 1: Receives a text from console input.
-  # question: str = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
+  question: str = input(f'{Fore.GREEN}INPUT: {Style.RESET_ALL}')
 
   # STEP 1: ask openAI for an answer
-  # answer: str = chatSession.chat(question)
+  answer: str = chatSession.chat(question)
 
   # print answer to debug if needed
   # print(f'{Fore.LIGHTMAGENTA_EX}RESPONSE:\n{Style.RESET_ALL} {answer}')
 
   # STEP 0: Basic assistance
-  assistance = Assistance()
-  assistance.addAction(lambda : webbrowser.open("https://me73379-iaccess.deltekfirst.com/oauth"), "Print message")
-  assistance.execute()
+  # assistance = Assistance()
+  # assistance.addAction(lambda : webbrowser.open("https://me73379-iaccess.deltekfirst.com/oauth"), "Print message")
+  # assistance.execute()
 
   # STEP 2: Text-to-speech assistance
   # assistance = Assistance()
@@ -66,5 +66,5 @@ while True:
   # assistance.execute()
 
   # STEP 3: Extract parsing to it's own function
-  # assistance = parse(text, textToSpeech)
-  # assistance.execute()
+  assistance = parse(answer, textToSpeech)
+  assistance.execute()
